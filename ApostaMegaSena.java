@@ -15,7 +15,10 @@ public class MegaSenaAposta {
         System.out.print("Quantos acertos terá no sorteio de 6 números?");
         int p = sc.nextInt();
 
-        //Cálculo da probabilidade de acertar n números.
+        if(n<0 || p>6){
+            System.out.println("Entre com dados válidos.");
+        } else{
+            //Cálculo da probabilidade de acertar n números.
         for(int i=1;i<=n;i++){
             fatn*=i;
         }
@@ -68,6 +71,7 @@ public class MegaSenaAposta {
 
         System.out.printf("A probabilidade de acertar %d e errar %.0f números é de 1 jogo a cada %.2f jogos.\n", p, errar6, c3);
         System.out.printf("Considerando que o valor de uma aposta é R$: %.2f reais, com %d números, o valor total da aposta foi de R$: %.2f reais, que equivale a %.0f jogos.", valor, n, valorPago, aposta);
+        }
 
 
         sc.close();
